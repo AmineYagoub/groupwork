@@ -17,7 +17,14 @@ RUN npm install
 COPY . ./
 
 # Build the application
-RUN npm run build && npm start
+RUN npm run build
+
+# Run container as non-root (unprivileged) user
+# The node user is provided in the Node.js Alpine base image
+USER node
+
+# Run npm start script when container starts
+CMD [ "npm", "start" ]
 
 #### Stage 2: Serve the React application from Nginx
 FROM nginx:1.19.6-alpine
