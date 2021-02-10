@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# next.js
+frontend/.next/
+frontend/out/
+
+# production
+frontend/build
+
+# debug
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# local env files
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# vercel
+frontend/.vercel
+
+
+
+# Binaries for programs and plugins
+api/*.exe
+api/*.exe~
+api/*.dll
+api/*.so
+api/*.dylib
+
+# Test binary, build with `go test -c`
+api/*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+api/*.out
+# Dependency directories (remove the comment below to include it)
+# vendor/
