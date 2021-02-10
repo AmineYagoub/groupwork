@@ -1,6 +1,6 @@
 name: nextjs
 image:
-  name: okteto.dev/nextjs:1
+  name: okteto.dev/nextjs
   context: .
   dockerfile: Dockerfile
 sync:
