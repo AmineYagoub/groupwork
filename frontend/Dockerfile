@@ -24,7 +24,7 @@ RUN npm run build
 #USER node
 
 # Run npm start script when container starts
-#CMD [ "npm", "start" ]
+CMD [ "npm", "run", "dev"]
 
 #### Stage 2: Serve the React application from Nginx
 FROM nginx:1.19.6-alpine
