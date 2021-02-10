@@ -24,7 +24,7 @@ spec:
             cpu: "1000m"
         ports:
           - name: http
-            containerPort: 80   # Should match the Port that the container listens on
+            containerPort: 3000   # Should match the Port that the container listens on
 ---
 apiVersion: v1                  # API version
 kind: Service                   # Type of kubernetes resource
@@ -37,4 +37,4 @@ spec:
   ports:                        # Forward incoming connections on port 80 to the target port 80 in the Pod
   - name: http
     port: 80
-    targetPort: 80
+    targetPort: 3000

@@ -1,5 +1,5 @@
 #### Stage 1: Build the react application
-FROM node:15.8.0-buster as build
+FROM node:15.8.0-buster
 
 # Configure the main working directory inside the docker image.
 # This is the base directory used in any further RUN, COPY, and ENTRYPOINT
@@ -17,7 +17,9 @@ RUN npm install
 COPY . ./
 
 # Build the application
-RUN npm run build
+#RUN npm run build
+
+EXPOSE 3000
 
 # Run container as non-root (unprivileged) user
 # The node user is provided in the Node.js Alpine base image
@@ -27,16 +29,16 @@ RUN npm run build
 CMD [ "npm", "run", "dev"]
 
 #### Stage 2: Serve the React application from Nginx
-FROM nginx:1.19.6-alpine
+#FROM nginx:1.19.6-alpine
 
 # Copy the react build from Stage 1
-COPY --from=build /app/.next /var/www
+#COPY --from=build /app/.next /var/www
 
 # Copy our custom nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
+#COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.
-EXPOSE 80
+#EXPOSE 80
 
-ENTRYPOINT ["nginx","-g","daemon off;"]
+#ENTRYPOINT ["nginx","-g","daemon off;"]
