@@ -1,8 +1,10 @@
 name: frontend
-image: okteto/node:12
-command: bash
+image: okteto.dev/frontend
+command: npm run dev
 sync:
-- .:/usr/src/app
+  - .:/app
+persistentVolume:
+  enabled: false
 forward:
 - 9229:9229
 - 3000:3000
