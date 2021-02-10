@@ -1,6 +1,5 @@
 name: frontend
 image: okteto.dev/frontend
-command: npm run dev
 sync:
   - .:/app
 persistentVolume:
