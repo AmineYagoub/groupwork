@@ -1,4 +1,4 @@
-name: nextjs
+name: frontend
 image: okteto.dev/nextjs
 sync:
   - .:/app
