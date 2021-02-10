@@ -1,5 +1,8 @@
 name: nextjs
-image: okteto.dev/nextjs
+image:
+  name: okteto.dev/nextjs:1
+  context: .
+  dockerfile: Dockerfile
 sync:
   - .:/app
 persistentVolume:
