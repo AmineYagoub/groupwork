@@ -14,5 +14,5 @@ func main() {
 }
 
 func helloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello world from k8s!")
+	fmt.Fprint(w, "Hello world from k8s! dev and I'm in sync with the local server")
 }

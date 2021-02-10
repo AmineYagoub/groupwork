@@ -1,5 +1,5 @@
-name: frontend
-image: okteto.dev/frontend
+name: nextjs
+image: okteto.dev/nextjs
 sync:
   - .:/app
 persistentVolume:
@@ -7,4 +7,10 @@ persistentVolume:
 forward:
 - 9229:9229
 - 3000:3000
-- 8000:8000
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "500m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"

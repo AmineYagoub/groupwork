@@ -18,6 +18,6 @@ resources:
 - api-db.yml
 images:
 - name: api
-- name: frontend
+- name: nextjs
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
