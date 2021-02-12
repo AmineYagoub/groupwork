@@ -1,18 +1,25 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"log"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("Starting hello-world server...")
-	http.HandleFunc("/", helloServer)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		panic(err)
-	}
-}
+	r := gin.Default()
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
 
-func helloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello world from k8s! dev and I'm in sync with the local server")
+	r.GET("/api", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "api pong",
+		})
+	})
+
+	log.Print("Hi")
+	r.Run() // listen and serve on 0.0.0.0:8080
 }
