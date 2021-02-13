@@ -12,10 +12,6 @@ spec:
             backend:
               serviceName: api
               servicePort: 8080
-          - path: /auth
-            backend:
-              serviceName: auth
-              servicePort: 8020
           - path: /
             backend:
               serviceName: frontend

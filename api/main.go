@@ -20,6 +20,18 @@ func main() {
 		})
 	})
 
+	r.GET("/api/auth", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "auth api pong",
+		})
+	})
+
+	r.GET("/auth", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "auth pong",
+		})
+	})
+
 	log.Print("Hi")
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

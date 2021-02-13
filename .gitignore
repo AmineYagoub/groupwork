@@ -45,3 +45,18 @@ api/*.test
 api/*.out
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Binaries for programs and plugins
+auth/*.exe
+auth/*.exe~
+auth/*.dll
+auth/*.so
+auth/*.dylib
+
+# Test binary, build with `go test -c`
+auth/*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+auth/*.out
+# Dependency directories (remove the comment below to include it)
+# vendor/
